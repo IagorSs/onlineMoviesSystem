@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken")
 const { messages } = require("../../helpers")
 const { constants } = require("../../utils")
 const { usuarioRepository } = require("../../repositories")
-const { promisify } = require("util")
 
 module.exports.novo = async (inscricao, email, nome, login, senha) => {
     const usuario = await usuarioRepository.get({ inscricao })
@@ -28,13 +27,12 @@ module.exports.novo = async (inscricao, email, nome, login, senha) => {
 
     await usuarioRepository.create(novo)
 
-    const payload = {
+    return {
         inscricao,
         email,
+        nome,
+        login,
+        createdAt: novo.createdAt,
+        updatedAt: novo.updatedAt
     }
-
-    const sign = promisify(jwt.sign);
-    const token = await sign(payload, constants.jwtToken)
-
-    return { email, token }
 }
