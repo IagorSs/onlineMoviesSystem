@@ -22,22 +22,26 @@ module.exports = (sequelize, DataTypes) => {
             nome: DataTypes.STRING,
             produtora: DataTypes.STRING,
             arquivo: DataTypes.BLOB,
-            descricao: DataTypes.STRING,
-            cpfAtorPrincipal: {
+            videoYoutubeId: {
                 type: DataTypes.STRING,
-                field: "cpf_ator_principal",
+                field: "video_youtube_id"
+            },
+            descricao: DataTypes.STRING,
+            idAtorPrincipal: {
+                type: DataTypes.STRING,
+                field: "id_ator_principal",
                 references: {
                     model: ator,
-                    key: "cpf",
+                    key: "id",
                     deferrable: Deferrable.INITIALLY_IMMEDIATE,
                 }
             },
-            cpfDiretor: {
+            idDiretor: {
                 type: DataTypes.STRING,
-                field: "cpf_diretor",
+                field: "id_diretor",
                 references: {
                     model: diretor,
-                    key: "cpf",
+                    key: "id",
                     deferrable: Deferrable.INITIALLY_IMMEDIATE,
                 }
             },

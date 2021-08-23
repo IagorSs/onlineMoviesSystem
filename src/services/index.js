@@ -23,7 +23,12 @@ const { novoFilmeAssistidoService,
         atualizarFilmeAssistidoService,
         deletarFilmeAssistidoService } 
         = require("./filme_assitido")
-        
+const { novoFilmeService,
+        getFilmeService,
+        atualizarFilmeService,
+        deletarFilmeService } 
+        = require("./filme")
+
 module.exports = {
     novoUsuarioService,
     getUsuarioService,
@@ -45,4 +50,8 @@ module.exports = {
     getFilmeAssistidoService,
     atualizarFilmeAssistidoService,
     deletarFilmeAssistidoService,
+    novoFilmeService,
+    getFilmeService,
+    atualizarFilmeService,
+    deletarFilmeService,
 }

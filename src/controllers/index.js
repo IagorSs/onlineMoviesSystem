@@ -23,7 +23,12 @@ const { novoFilmeAssistidoController,
         atualizarFilmeAssistidoController,
         deletarFilmeAssistidoController } 
         = require("./filme_assistido")
-
+const { novoFilmeController, 
+        getFilmeController,
+        atualizarFilmeController,
+        deletarFilmeController } 
+        = require("./filme")
+        
 module.exports = {
     novoUsuarioController,
     getUsuarioController,
@@ -45,4 +50,8 @@ module.exports = {
     getFilmeAssistidoController,
     atualizarFilmeAssistidoController,
     deletarFilmeAssistidoController,
+    novoFilmeController,
+    getFilmeController,
+    atualizarFilmeController,
+    deletarFilmeController,
 }
