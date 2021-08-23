@@ -1,10 +1,10 @@
-const { Ator } = require("../models")
+const { ator } = require("../models")
 
 module.exports = {
-    list: (query) => Ator.findAndCountAll(query),
-    getById: (id) => Ator.findByPk(id),
-    get: (params) => Ator.findOne({ where: params }),
-    create: (params) => Ator.create(params),
-    update: (ator) => ator.save(),
-    destroy: (id) => Ator.destroy({ where: { id } }),
+    list: (query) => ator.findAndCountAll(query),
+    getById: (id) => ator.findByPk(id),
+    get: (params) => ator.findOne({ where: params }),
+    create: (params) => ator.create(params),
+    update: (Ator) => Ator.save(),
+    destroy: (id) => ator.destroy({ where: { id } }),
 }

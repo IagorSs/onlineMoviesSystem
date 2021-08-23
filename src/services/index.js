@@ -1,10 +1,13 @@
-const { novoUsuarioService, getUsuarioService, atualizarUsuario, deletarUsuario } = require("./usuario")
-const { novoAtorService } = require("./ator")
+const { novoUsuarioService, getUsuarioService, atualizarUsuarioService, deletarUsuarioService } = require("./usuario")
+const { novoAtorService, getAtorService, atualizarAtorService, deletarAtorService } = require("./ator")
 
 module.exports = {
     novoUsuarioService,
     getUsuarioService,
-    atualizarUsuario,
-    deletarUsuario,
+    atualizarUsuarioService,
+    deletarUsuarioService,
     novoAtorService,
+    getAtorService,
+    atualizarAtorService,
+    deletarAtorService,
 }

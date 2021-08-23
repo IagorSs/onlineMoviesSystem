@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             sequelize,
-            modelName: "filme_assistido"
+            modelName: "filme_assistido",
+            tableName: "filme_assistido"
     });
     return filmeAssistido;
 }

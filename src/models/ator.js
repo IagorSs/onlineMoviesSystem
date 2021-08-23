@@ -3,12 +3,12 @@ module.exports = (sequelize, DataTypes) => {
     class Ator extends Model {};
 
     Ator.init({
-            cpf: {
+            id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
             },
             nome: DataTypes.STRING,
-            nastimento: DataTypes.DATE,
+            nascimento: DataTypes.DATE,
             createdAt: {
               type: DataTypes.DATE,
               field: "created_at",
@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: "ator",
+            tableName: "ator"
     });
     return Ator;
 }

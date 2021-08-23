@@ -1,13 +1,12 @@
 const { StatusCodes } = require("http-status-codes")
-const { deletarUsuarioService } = require("../../services")
+const { deletarAtorService } = require("../../services")
 const yup = require("yup")
 
 module.exports = {
     deletar: async (req, res) => {
         try {
-            const inscricao = req.params['id']
-
-            const response = await deletarUsuarioService.deletar(inscricao)
+            const id = req.params['id']
+            const response = await deletarAtorService.deletar(id)
             return res.status(StatusCodes.NO_CONTENT).json(response)
         } catch (error) {
             console.error(error)

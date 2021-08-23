@@ -1,10 +1,10 @@
-const { Diretor } = require("../models")
+const { diretor } = require("../models")
 
 module.exports = {
-    list: (query) => Diretor.findAndCountAll(query),
-    getById: (id) => Diretor.findByPk(id),
-    get: (params) => Diretor.findOne({ where: params }),
-    create: (params) => Diretor.create(params),
-    update: (diretor) => diretor.save(),
-    destroy: (id) => Diretor.destroy({ where: { id } }),
+    list: (query) => diretor.findAndCountAll(query),
+    getById: (id) => diretor.findByPk(id),
+    get: (params) => diretor.findOne({ where: params }),
+    create: (params) => diretor.create(params),
+    update: (Diretor) => Diretor.save(),
+    destroy: (id) => diretor.destroy({ where: { id } }),
 }

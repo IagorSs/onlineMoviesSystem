@@ -1,10 +1,10 @@
-const { Filme } = require("../models");
+const { filme } = require("../models");
 
 module.exports = {
-    list: (query) => Filme.findAndCountAll(query),
-    getById: (id) => Filme.findByPk(id),
-    get: (params) => Filme.findOne({ where: params }),
-    create: (params) => Filme.create(params),
-    update: (filme) => filme.save(),
-    destroy: (id) => Filme.destroy({ where: { id } })
+    list: (query) => filme.findAndCountAll(query),
+    getById: (id) => filme.findByPk(id),
+    get: (params) => filme.findOne({ where: params }),
+    create: (params) => filme.create(params),
+    update: (Filme) => Filme.save(),
+    destroy: (id) => filme.destroy({ where: { id } })
 };

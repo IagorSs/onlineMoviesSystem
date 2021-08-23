@@ -1,24 +1,22 @@
 const { StatusCodes } = require("http-status-codes")
-const { atualizarUsuarioService } = require("../../services")
+const { atualizarAtorService } = require("../../services")
 const yup = require("yup")
 
-module.exports = {
+module.exports ={
     atualizar: async (req, res) => {
         try {
             const schema = yup.object().shape({
-                inscricao: yup.number().required(),
-                email: yup.string().required().email(),
+                id: yup.string().required(),
                 nome: yup.string().required(),
-                login: yup.string().required(),
-                senha: yup.string().required()
-            })
-            
-            await schema.validate(req.body, {
-                stripUnknown: true,
+                nascimento: yup.date()
             })
 
-            const { inscricao, email, nome, login, senha } = req.body
-            const response = await atualizarUsuarioService.atualizar(inscricao, email, nome, login, senha)
+            await schema.validate(req.body, {
+                stripUnknown: true
+            })
+
+            const { id, nome, nascimento } = req.body
+            const response = await atualizarAtorService.atualizar(id, nome, nascimento)
             return res.status(StatusCodes.OK).json(response)
         } catch (error) {
             console.error(error)
@@ -26,7 +24,7 @@ module.exports = {
                 error.name == "ValidationError"
                     ? StatusCodes.UNPROCESSABLE_ENTITY
                     : error.status || StatusCodes.INTERNAL_SERVER_ERROR
-            ).json(error.message)
+            ).json(error.message)            
         }
     }
 }

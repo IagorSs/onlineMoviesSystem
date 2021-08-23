@@ -1,10 +1,10 @@
-const { Plano } = require("../models")
+const { plano } = require("../models")
 
 module.exports = {
-    list: (query) => Plano.findAndCountAll(query),
-    getById: (id) => Plano.findByPk(id),
-    get: (params) => Plano.findOne({ where: params }),
-    create: (params) => Plano.create(params),
-    update: (plano) => plano.save(),
-    destroy: (id) => Plano.destroy({ where: { id } }),
+    list: (query) => plano.findAndCountAll(query),
+    getById: (id) => plano.findByPk(id),
+    get: (params) => plano.findOne({ where: params }),
+    create: (params) => plano.create(params),
+    update: (Plano) => Plano.save(),
+    destroy: (id) => plano.destroy({ where: { id } }),
 }

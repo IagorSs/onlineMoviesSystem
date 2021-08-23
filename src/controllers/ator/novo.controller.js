@@ -1,24 +1,22 @@
-const { StatusCodes } = require("http-status-codes")
-const { atualizarUsuarioService } = require("../../services")
+const { StatusCodes, TOO_MANY_REQUESTS } = require("http-status-codes")
+const { novoAtorService } = require("../../services")
 const yup = require("yup")
 
 module.exports = {
-    atualizar: async (req, res) => {
+    novo: async (req, res) => {
         try {
             const schema = yup.object().shape({
-                inscricao: yup.number().required(),
-                email: yup.string().required().email(),
+                id: yup.string().required(),
                 nome: yup.string().required(),
-                login: yup.string().required(),
-                senha: yup.string().required()
+                nascimento: yup.date(),
             })
-            
+
             await schema.validate(req.body, {
                 stripUnknown: true,
             })
 
-            const { inscricao, email, nome, login, senha } = req.body
-            const response = await atualizarUsuarioService.atualizar(inscricao, email, nome, login, senha)
+            const { id, nome, nascimento } = req.body
+            const response = await novoAtorService.novo(id, nome, nascimento)
             return res.status(StatusCodes.OK).json(response)
         } catch (error) {
             console.error(error)

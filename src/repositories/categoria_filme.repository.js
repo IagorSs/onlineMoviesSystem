@@ -1,10 +1,10 @@
-const { categoriaFilme } = require("../models")
+const { categoria_filme } = require("../models")
 
 module.exports = {
-    list: (query) => categoriaFilme.findAndCountAll(query),
-    getById: (id) => categoriaFilme.findByPk(id),
-    get: (params) => categoriaFilme.findOne({ where: params }),
-    create: (params) => categoriaFilme.create(params),
-    update: (categoria_filme) => categoria_filme.save(),
-    destroy: (id) => categoriaFilme.destroy({ where: { id } }),
+    list: (query) => categoria_filme.findAndCountAll(query),
+    getById: (id) => categoria_filme.findByPk(id),
+    get: (params) => categoria_filme.findOne({ where: params }),
+    create: (params) => categoria_filme.create(params),
+    update: (categoriaFilme) => categoriaFilme.save(),
+    destroy: (id) => categoria_filme.destroy({ where: { id } }),
 }

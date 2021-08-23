@@ -7,7 +7,7 @@ const { atorRepository } = require("../../repositories")
 const { promisify } = require("util")
 
 module.exports.novo = async(id, nome, nascimento) => {
-    const ator = await atorRepository.getById(id)
+    const ator = await atorRepository.get({id})
 
     if(ator){
         throw {
@@ -26,5 +26,5 @@ module.exports.novo = async(id, nome, nascimento) => {
 
     await atorRepository.create(novo)
 
-    return { id, nome }
+    return { id, nome , nascimento}
 }
