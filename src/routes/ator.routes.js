@@ -1,5 +1,9 @@
 const router = require("express").Router()
-const { novoAtorController, getAtorController, atualizarAtorController, deletarAtorController } = require("../controllers")
+const { novoAtorController, 
+        getAtorController, 
+        atualizarAtorController, 
+        deletarAtorController } 
+        = require("../controllers")
 
 router.post("/novo", novoAtorController.novo)
 router.get("/get/:id", getAtorController.get)

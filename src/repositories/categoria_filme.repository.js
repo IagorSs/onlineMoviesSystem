@@ -6,5 +6,5 @@ module.exports = {
     get: (params) => categoria_filme.findOne({ where: params }),
     create: (params) => categoria_filme.create(params),
     update: (categoriaFilme) => categoriaFilme.save(),
-    destroy: (id) => categoria_filme.destroy({ where: { id } }),
+    destroy: (categoria) => categoria_filme.destroy({ where: { categoria } }),
 }

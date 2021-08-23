@@ -1,22 +1,21 @@
 const { StatusCodes } = require("http-status-codes")
-const { novoAtorService } = require("../../services")
+const { atualizarCategoriaFilmeService } = require("../../services")
 const yup = require("yup")
 
 module.exports = {
-    novo: async (req, res) => {
+    atualizar: async (req, res) => {
         try {
             const schema = yup.object().shape({
-                id: yup.string().required(),
-                nome: yup.string().required(),
-                nascimento: yup.date(),
+                antigaCategoria: yup.string().required(),
+                novaCategoria: yup.string().required()
             })
 
             await schema.validate(req.body, {
-                stripUnknown: true,
+                stripUnknown: true
             })
 
-            const { id, nome, nascimento } = req.body
-            const response = await novoAtorService.novo(id, nome, nascimento)
+            const { antigaCategoria, novaCategoria } = req.body
+            const response = await atualizarCategoriaFilmeService.atualizar(antigaCategoria, novaCategoria)
             return res.status(StatusCodes.OK).json(response)
         } catch (error) {
             console.error(error)

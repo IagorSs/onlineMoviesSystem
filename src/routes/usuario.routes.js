@@ -1,5 +1,9 @@
 const router = require("express").Router()
-const { novoUsuarioController, getUsuarioController, atualizarUsuarioController, deletarUsuarioController } = require("../controllers")
+const { novoUsuarioController, 
+        getUsuarioController, 
+        atualizarUsuarioController, 
+        deletarUsuarioController } 
+        = require("../controllers")
 
 router.post("/novo", novoUsuarioController.novo)
 router.post("/login", getUsuarioController.get)
