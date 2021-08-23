@@ -12,7 +12,7 @@ module.exports.deletar = async(inscricao, categoria) => {
             message: messages.notFound("plano"),
         }
     }
-    console.log(categoria)
+    
     await planoRepository.destroy({inscricao, categoria})
 
     return "plano deletado"
