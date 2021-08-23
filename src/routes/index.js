@@ -4,6 +4,7 @@ const { categoria_filme } = require("./categoria_filme.routes")
 const { diretor } = require("./diretor.routes")
 const { filme_assistido } = require("./filme_assistido.routes")
 const { filme } = require("./filme.routes")
+const { plano } = require("./plano.routes")
 
 module.exports = {
     usuario,
@@ -12,4 +13,5 @@ module.exports = {
     diretor,
     filme_assistido,
     filme,
+    plano,
 }

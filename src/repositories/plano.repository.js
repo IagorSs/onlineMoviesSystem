@@ -6,5 +6,5 @@ module.exports = {
     get: (params) => plano.findOne({ where: params }),
     create: (params) => plano.create(params),
     update: (Plano) => Plano.save(),
-    destroy: (id) => plano.destroy({ where: { id } }),
+    destroy: (params) => plano.destroy({ where: params }),
 }
