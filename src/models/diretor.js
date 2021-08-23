@@ -3,12 +3,12 @@ module.exports = (sequelize, DataTypes) => {
     class Diretor extends Model{};
 
     Diretor.init({
-            cpf: {
+            id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
             },
             nome: DataTypes.STRING,
-            nastimento: DataTypes.DATE,
+            nascimento: DataTypes.DATE,
             nFilmesDirigidos: {
                 type: DataTypes.INTEGER,
                 field: "n_filmes_dirigidos",

@@ -13,6 +13,11 @@ const { novoCategoriaFilmeController,
         atualizarCategoriaFilmeController,
         deletarCategoriaFilmeController } 
         = require("./categoria_filme")
+const { novoDiretorController,
+        getDiretorController,
+        atualizarDiretorController,
+        deletarDiretorController } 
+        = require("./diretor")
 
 module.exports = {
     novoUsuarioController,
@@ -27,4 +32,8 @@ module.exports = {
     getCategoriaFilmeController,
     atualizarCategoriaFilmeController,
     deletarCategoriaFilmeController,
+    novoDiretorController,
+    getDiretorController,
+    atualizarDiretorController,
+    deletarDiretorController,
 }

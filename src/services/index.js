@@ -11,9 +11,14 @@ const { novoAtorService,
 const { novoCategoriaFilmeService,
         getCategoriaFilmeService,
         atualizarCategoriaFilmeService,
-        deletarCategoriaFilmeService
-        } = require("./categoria_filme")
-        
+        deletarCategoriaFilmeService } 
+        = require("./categoria_filme")
+const { novoDiretorService,
+        getDiretorService,
+        atualizarDiretorService,
+        deletarDiretorService} 
+        = require("./diretor")
+
 module.exports = {
     novoUsuarioService,
     getUsuarioService,
@@ -27,4 +32,8 @@ module.exports = {
     getCategoriaFilmeService,
     atualizarCategoriaFilmeService,
     deletarCategoriaFilmeService,
+    novoDiretorService,
+    getDiretorService,
+    atualizarDiretorService,
+    deletarDiretorService,
 }
