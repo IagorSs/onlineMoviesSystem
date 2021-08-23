@@ -5,7 +5,9 @@ const { messages } = require("../../helpers")
 const { constants } = require("../../utils")
 const { usuarioRepository } = require("../../repositories")
 
-module.exports.novo = async (inscricao, email, nome, login, senha) => {
+module.exports.novo = async (login, senha) => {
+    const inscricao = parseInt(Math.random() * 10000000000)
+
     const usuario = await usuarioRepository.get({ inscricao })
     
     if(usuario){
@@ -17,8 +19,8 @@ module.exports.novo = async (inscricao, email, nome, login, senha) => {
 
     const novo = {
         inscricao,
-        email,
-        nome,
+        email: null,
+        nome: null,
         login,
         senha,
         createdAt: new Date(),
@@ -29,8 +31,8 @@ module.exports.novo = async (inscricao, email, nome, login, senha) => {
 
     return {
         inscricao,
-        email,
-        nome,
+        email: null,
+        nome: null,
         login,
         createdAt: novo.createdAt,
         updatedAt: novo.updatedAt
