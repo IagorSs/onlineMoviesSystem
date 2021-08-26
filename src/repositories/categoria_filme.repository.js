@@ -7,4 +7,5 @@ module.exports = {
     create: (params) => categoria_filme.create(params),
     update: (categoriaFilme) => categoriaFilme.save(),
     destroy: (categoria) => categoria_filme.destroy({ where: { categoria } }),
+    getAll: () => categoria_filme.findAll({raw: true})
 }

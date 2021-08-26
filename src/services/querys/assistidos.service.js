@@ -1,18 +1,19 @@
 const { StatusCodes } = require("http-status-codes")
 
 const { messages } = require("../../helpers")
-const { querysRepository } = require("../../repositories")
+const { querysRepository, usuarioRepository } = require("../../repositories")
 
 module.exports.assistidos = async () => {
     const consulta = await querysRepository.assistidos()
-    const users = await querysRepository.usarios()
-
+    const users = await usuarioRepository.getAll()
+    
     if(!consulta) {
         throw{
             status: StatusCodes.INTERNAL_SERVER_ERROR,
             message: messages.internalError()
         }
     }
+    
     let response = []
     consulta.forEach(element => {
         users.forEach(user => {
@@ -21,7 +22,6 @@ module.exports.assistidos = async () => {
             }
         })
     });
-    console.log(response)
 
     return response
 }

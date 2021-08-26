@@ -6,4 +6,5 @@ module.exports = {
     create: (params) => usuario.create(params),
     update: (user) => user.save(),
     destroy: (inscricao) => usuario.destroy({ where: { inscricao } }),
+    getAll: () => usuario.findAll({raw: true})
 }

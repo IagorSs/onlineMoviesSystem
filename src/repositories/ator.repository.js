@@ -7,4 +7,5 @@ module.exports = {
     create: (params) => ator.create(params),
     update: (Ator) => Ator.save(),
     destroy: (id) => ator.destroy({ where: { id } }),
+    getAll: () => ator.findAll({raw: true})
 }

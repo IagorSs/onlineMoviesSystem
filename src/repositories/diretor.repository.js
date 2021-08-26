@@ -7,4 +7,5 @@ module.exports = {
     create: (params) => diretor.create(params),
     update: (Diretor) => Diretor.save(),
     destroy: (id) => diretor.destroy({ where: { id } }),
+    getAll: () => diretor.findAll({raw: true})
 }

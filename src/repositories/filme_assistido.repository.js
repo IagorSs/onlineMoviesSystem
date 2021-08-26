@@ -7,4 +7,5 @@ module.exports = {
     create: (params) => filme_assistido.create(params),
     update: (filmeAssistido) => filmeAssistido.save(),
     destroy: (id_filme, inscricao_usuario) => filme_assistido.destroy({ where: { inscricao_usuario, id_filme } }),
+    getAll: () => filme_assistido.findAll({raw: true})
 }
