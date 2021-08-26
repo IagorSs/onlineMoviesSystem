@@ -6,7 +6,9 @@ const { filme_assistido } = require("./filme_assistido.routes")
 const { filme } = require("./filme.routes")
 const { plano } = require("./plano.routes")
 const { assistidos } = require("./assistidos.routes")
-const { filmesViews } = require = require("./filmesViews.routes")
+const { filmesViews } = require("./filmesViews.routes")
+const { quantidadeAssistidaDosUsuarios } = require("./quantidadeAssistidaDosUsuarios.routes")
+const { assistidosDoUsuario } = require("./assistidosDoUsuario.routes")
 
 module.exports = {
     usuario,
@@ -18,4 +20,6 @@ module.exports = {
     plano,
     assistidos,
     filmesViews,
+    quantidadeAssistidaDosUsuarios,
+    assistidosDoUsuario,
 }

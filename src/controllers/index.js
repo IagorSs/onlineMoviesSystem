@@ -35,6 +35,8 @@ const { novoPlanoController,
         = require("./plano")
 const { assistidosController,
         filmesViewsController,
+        quantidadeAssistidaDosUsuariosController,
+        assistidosDoUsuarioController,
         }
         = require("./querys")
 
@@ -69,4 +71,6 @@ module.exports = {
     deletarPlanoController,
     assistidosController,
     filmesViewsController,
+    quantidadeAssistidaDosUsuariosController,
+    assistidosDoUsuarioController,
 }

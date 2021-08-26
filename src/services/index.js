@@ -35,8 +35,11 @@ const { novoPlanoSerice,
         = require("./plano")
 const { assistidosService,
         filmesViewsService,
+        quantidadeAssistidaDosUsuariosService,
+        assistidosDoUsuarioService,
         } 
         = require("./querys")
+        
 module.exports = {
     novoUsuarioService,
     getUsuarioService,
@@ -68,4 +71,6 @@ module.exports = {
     deletarPlanoService,
     assistidosService,
     filmesViewsService,
+    quantidadeAssistidaDosUsuariosService,
+    assistidosDoUsuarioService,
 }
