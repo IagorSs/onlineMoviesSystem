@@ -37,6 +37,7 @@ const { assistidosService,
         filmesViewsService,
         quantidadeAssistidaDosUsuariosService,
         assistidosDoUsuarioService,
+        filmeAssistidoPorService,
         } 
         = require("./querys")
         
@@ -73,4 +74,5 @@ module.exports = {
     filmesViewsService,
     quantidadeAssistidaDosUsuariosService,
     assistidosDoUsuarioService,
+    filmeAssistidoPorService,
 }

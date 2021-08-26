@@ -58,9 +58,25 @@ module.exports = {
         },
         group: ['id_filme', 'inscricao_usuario'],
         having: { inscricao_usuario: inscricao}
+    }),
+    filmeAssistidoPor: (id) => filme_assistido.findAll({
+        attributes: ['inscricao_usuario'],
+        includes: {
+            model: filme_assistido,
+            attributes: ['id_filme', 'inscricao_usuario'],
+            includes: {
+                model: usuario, 
+                duplicating: true,
+                where: {
+                    inscricaoUsuario: {[Op.eq]: col('usuario.inscricao')}
+                }
+            },
+        },
+        where: {
+            idFilme: id
+        }
     })
 }
-
-//select usuario.nome, usuario.inscricao, count(filme_assistido.id_filme) from usuario 
-//	join filme_assistido on usuario.inscricao = filme_assistido.inscricao_usuario
-//	group by usuario.inscricao;
+//select * from (select usuario.nome, filme_assistido.id_filme from usuario 
+//	join filme_assistido on usuario.inscricao = filme_assistido.inscricao_usuario) as assistidos
+//	where assistidos.id_filme = 5;

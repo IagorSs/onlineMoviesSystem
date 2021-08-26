@@ -9,6 +9,7 @@ const { assistidos } = require("./assistidos.routes")
 const { filmesViews } = require("./filmesViews.routes")
 const { quantidadeAssistidaDosUsuarios } = require("./quantidadeAssistidaDosUsuarios.routes")
 const { assistidosDoUsuario } = require("./assistidosDoUsuario.routes")
+const { filmeAssistidoPor } = require("./filmeAssistidoPor.routes")
 
 module.exports = {
     usuario,
@@ -22,4 +23,5 @@ module.exports = {
     filmesViews,
     quantidadeAssistidaDosUsuarios,
     assistidosDoUsuario,
+    filmeAssistidoPor,
 }
