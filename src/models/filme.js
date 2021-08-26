@@ -22,13 +22,17 @@ module.exports = (sequelize, DataTypes) => {
             nome: DataTypes.STRING,
             produtora: DataTypes.STRING,
             arquivo: DataTypes.BLOB,
-            videoYoutubeId: {
+            imageUrl: {
                 type: DataTypes.STRING,
-                field: "video_youtube_id"
+                field: "image_url"
+            },
+            videoUrl: {
+                type: DataTypes.STRING,
+                field: "video_url"
             },
             descricao: DataTypes.STRING,
             idAtorPrincipal: {
-                type: DataTypes.STRING,
+                type: DataTypes.INTEGER,
                 field: "id_ator_principal",
                 references: {
                     model: ator,
@@ -37,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
                 }
             },
             idDiretor: {
-                type: DataTypes.STRING,
+                type: DataTypes.INTEGER,
                 field: "id_diretor",
                 references: {
                     model: diretor,

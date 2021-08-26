@@ -5,6 +5,7 @@ const filmeAssistidoRepository = require("./filme_assistido.repository")
 const filmeRepository = require("./filme.repository")
 const planoRepository = require("./plano.repository")
 const usuarioRepository = require("./usuario.repository")
+const querysRepository = require("./querys.repository")
 
 module.exports = {
     atorRepository,
@@ -14,4 +15,5 @@ module.exports = {
     filmeRepository,
     planoRepository,
     usuarioRepository,
+    querysRepository
 };

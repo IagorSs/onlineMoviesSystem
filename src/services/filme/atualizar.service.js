@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes")
 const { messages } = require("../../helpers")
 const { filmeRepository } = require("../../repositories")
 
-module.exports.atualizar = async (id, categoria, duracao, nome, produtora, arquivo, video_youtube_id, descricao, id_ator_princial, id_diretor) => {
+module.exports.atualizar = async (id, categoria, duracao, nome, produtora, arquivo, image_url, video_url, descricao, id_ator_principal, id_diretor) => {
     const filme = await filmeRepository.get({id})
 
     if(!filme){
@@ -20,14 +20,17 @@ module.exports.atualizar = async (id, categoria, duracao, nome, produtora, arqui
     if(arquivo != null){
         filme.arquivo = arquivo
     }
-    if(video_youtube_id != null){
-        filme.videoYoutubeId = video_youtube_id
+    if(image_url != null){
+        filme.imageUrl = image_url
+    }
+    if(video_url != null){
+        filme.videoUrl = video_url
     }
     if(descricao != null){
         filme.descricao = descricao
     }
-    if(id_ator_princial != null){
-        filme.idAtorPrincipal = id_ator_princial
+    if(id_ator_principal != null){
+        filme.idAtorPrincipal = id_ator_principal
     }
     if(id_diretor != null){
         filme.idDiretor = id_diretor
@@ -43,7 +46,8 @@ module.exports.atualizar = async (id, categoria, duracao, nome, produtora, arqui
         nome: filme.nome,
         produtora: filme.produtora,
         arquivo: filme.produtora,
-        videoYoutubeId: filme.videoYoutubeId,
+        imageUrl: filme.imageUrl,
+        videourl: filme.videoUrl,
         descricao: filme.descricao,
         idAtorPrincipal: filme.idAtorPrincipal,
         idDiretor: filme.idDiretor,

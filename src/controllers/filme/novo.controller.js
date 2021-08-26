@@ -12,7 +12,8 @@ module.exports = {
                 nome: yup.string().required(),
                 produtora: yup.string().required(),
                 arquivo: yup.string(),
-                video_youtube_id: yup.string(),
+                image_url: yup.string(),
+                video_url: yup.string(),
                 descricao: yup.string(),
                 id_ator_principal: yup.number(),
                 id_diretor: yup.number()
@@ -22,8 +23,8 @@ module.exports = {
                 stripUnknown: true
             })
 
-            const { id, categoria, duracao, nome, produtora, arquivo, video_youtube_id, descricao, id_ator_principal, id_diretor } = req.body
-            const response = await novoFilmeService.novo(id, categoria, duracao, nome, produtora, arquivo, video_youtube_id, descricao, id_ator_principal, id_diretor)
+            const { id, categoria, duracao, nome, produtora, arquivo, image_url, video_url, descricao, id_ator_principal, id_diretor } = req.body
+            const response = await novoFilmeService.novo(id, categoria, duracao, nome, produtora, arquivo, image_url, video_url, descricao, id_ator_principal, id_diretor)
             return res.status(StatusCodes.OK).json(response)
         } catch (error) {
             console.error(error)

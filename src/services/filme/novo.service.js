@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes")
 const { messages } = require("../../helpers")
 const { filmeRepository } = require("../../repositories")
 
-module.exports.novo = async (id, categoria, duracao, nome, produtora, arquivo, video_youtube_id, descricao, id_ator_princial, id_diretor) => {
+module.exports.novo = async (id, categoria, duracao, nome, produtora, arquivo, image_url, video_url, descricao, id_ator_principal, id_diretor) => {
     const filme = await filmeRepository.get({id})
 
     if(filme){
@@ -20,9 +20,10 @@ module.exports.novo = async (id, categoria, duracao, nome, produtora, arquivo, v
         nome,
         produtora,
         arquivo,
-        videoYoutubeId: video_youtube_id,
+        imageUrl: image_url,
+        videoUrl: video_url,
         descricao,
-        idAtorPrincipal: id_ator_princial,
+        idAtorPrincipal: id_ator_principal,
         idDiretor: id_diretor,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -37,9 +38,10 @@ module.exports.novo = async (id, categoria, duracao, nome, produtora, arquivo, v
         nome,
         produtora,
         arquivo,
-        videoYoutubeId: video_youtube_id,
+        imageUrl: image_url,
+        videoUrl: video_url,
         descricao,
-        idAtorPrincipal: id_ator_princial,
+        idAtorPrincipal: id_ator_principal,
         idDiretor: id_diretor,
     }
 }

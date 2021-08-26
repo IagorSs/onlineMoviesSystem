@@ -33,7 +33,9 @@ const { novoPlanoSerice,
         atualizarPlanoService,
         deletarPlanoService } 
         = require("./plano")
-
+const { assistidosService,
+        } 
+        = require("./querys")
 module.exports = {
     novoUsuarioService,
     getUsuarioService,
@@ -63,4 +65,5 @@ module.exports = {
     getPlanoService,
     atualizarPlanoService,
     deletarPlanoService,
+    assistidosService,
 }

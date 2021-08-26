@@ -5,6 +5,7 @@ const { diretor } = require("./diretor.routes")
 const { filme_assistido } = require("./filme_assistido.routes")
 const { filme } = require("./filme.routes")
 const { plano } = require("./plano.routes")
+const { assistidos } = require("./assistidos.routes")
 
 module.exports = {
     usuario,
@@ -14,4 +15,5 @@ module.exports = {
     filme_assistido,
     filme,
     plano,
+    assistidos,
 }

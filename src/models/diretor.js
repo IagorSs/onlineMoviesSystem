@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Diretor.init({
             id: {
-                type: DataTypes.STRING,
+                type: DataTypes.INTEGER,
                 primaryKey: true,
             },
             nome: DataTypes.STRING,

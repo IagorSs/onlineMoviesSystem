@@ -6,7 +6,7 @@ module.exports = {
     novo: async (req, res) => {
         try {
             const schema = yup.object().shape({
-                id: yup.string().required(), 
+                id: yup.number().required(), 
                 nome: yup.string().required(),
                 nascimento: yup.date(),
                 n_filmes_dirigidos: yup.number()

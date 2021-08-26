@@ -33,6 +33,10 @@ const { novoPlanoController,
         atualizarPlanoController,
         deletarPlanoController }
         = require("./plano")
+const { assistidosController,
+        }
+        = require("./querys")
+
 module.exports = {
     novoUsuarioController,
     getUsuarioController,
@@ -62,4 +66,5 @@ module.exports = {
     getPlanoController,
     atualizarPlanoController,
     deletarPlanoController,
+    assistidosController,
 }
