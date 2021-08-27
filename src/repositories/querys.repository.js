@@ -8,7 +8,7 @@ const {
     plano,
     usuario
 } = require("../models")
-const { Op, col, fn} = require("sequelize")
+const { Op, col, fn, Sequelize } = require("sequelize")
 
 module.exports = {
     assistidos: () => filme_assistido.findAll({
@@ -109,10 +109,29 @@ module.exports = {
         },
         group: ['pagamento', 'inscricao'],
         order: ['inscricao']
+    }),
+    assistidosDoUsuarioSub: (inscricao) => filme_assistido.findAll({
+        raw: true,
+        attributes: ['id_filme'],
+        includes: {
+            model: usuario,
+            duplicating: true,
+            where: {
+                inscricao: {[Op.eq]: col('filme_assistido.inscricao_usuario')}
+            }
+        },
+        group: ['id_filme', 'inscricao_usuario'],
+        having: { inscricao_usuario: inscricao}
+    }),
+    catalogoUsuario: (model) => filme.findAll({
+        attributes: ['id', 'nome', 'categoria'],
+        where:{
+            id:{[Op.in]: model}
+        }
     })
 }
-//select distinct(assistidos.nome), plano.pagamento from (select distinct(usuario.nome), usuario.inscricao, count(filme_assistido.id_filme) from usuario 
+//select filme.id, filme.nome, assistidos_do_usuario.nome from (select usuario.nome, filme_assistido.id_filme from usuario 
 //	join filme_assistido on usuario.inscricao = filme_assistido.inscricao_usuario
-//	group by usuario.inscricao) as assistidos
-//	join plano on assistidos.inscricao = plano.inscricao
-//	group by assistidos.nome, plano.pagamento;
+//	group by usuario.nome,filme_assistido.id_filme,usuario.inscricao
+//	having usuario.inscricao = 3) as assistidos_do_usuario
+//	right join filme on filme.id = assistidos_do_usuario.id_filme;

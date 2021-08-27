@@ -11,7 +11,8 @@ const { novoAtorService,
 const { novoCategoriaFilmeService,
         getCategoriaFilmeService,
         atualizarCategoriaFilmeService,
-        deletarCategoriaFilmeService } 
+        deletarCategoriaFilmeService,
+        getAllCategoriaFilmeService } 
         = require("./categoria_filme")
 const { novoDiretorService,
         getDiretorService,
@@ -26,7 +27,8 @@ const { novoFilmeAssistidoService,
 const { novoFilmeService,
         getFilmeService,
         atualizarFilmeService,
-        deletarFilmeService } 
+        deletarFilmeService,
+        getPelaCategoriaService } 
         = require("./filme")
 const { novoPlanoSerice,
         getPlanoService,
@@ -40,7 +42,7 @@ const { assistidosService,
         filmeAssistidoPorService,
         viewsPorFilmeService,
         planosAtivosService,
-        } 
+        catalogoUsuarioService } 
         = require("./querys")
         
 module.exports = {
@@ -56,6 +58,7 @@ module.exports = {
     getCategoriaFilmeService,
     atualizarCategoriaFilmeService,
     deletarCategoriaFilmeService,
+    getAllCategoriaFilmeService,
     novoDiretorService,
     getDiretorService,
     atualizarDiretorService,
@@ -68,6 +71,7 @@ module.exports = {
     getFilmeService,
     atualizarFilmeService,
     deletarFilmeService,
+    getPelaCategoriaService,
     novoPlanoSerice,
     getPlanoService,
     atualizarPlanoService,
@@ -79,4 +83,5 @@ module.exports = {
     filmeAssistidoPorService,
     viewsPorFilmeService,
     planosAtivosService,
+    catalogoUsuarioService
 }

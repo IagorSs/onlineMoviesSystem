@@ -11,7 +11,8 @@ const { novoAtorController,
 const { novoCategoriaFilmeController,
         getCategoriaFilmeController,
         atualizarCategoriaFilmeController,
-        deletarCategoriaFilmeController } 
+        deletarCategoriaFilmeController,
+        getAllCategoriaFilmeController } 
         = require("./categoria_filme")
 const { novoDiretorController,
         getDiretorController,
@@ -26,7 +27,8 @@ const { novoFilmeAssistidoController,
 const { novoFilmeController, 
         getFilmeController,
         atualizarFilmeController,
-        deletarFilmeController } 
+        deletarFilmeController,
+        getPelaCategoriaController } 
         = require("./filme")
 const { novoPlanoController,
         getPlanoController,
@@ -40,7 +42,7 @@ const { assistidosController,
         filmeAssistidoPorController,
         viewsPorFilmeController,
         planosAtivosController,
-        }
+        catalogoUsuarioController }
         = require("./querys")
 
 module.exports = {
@@ -56,6 +58,7 @@ module.exports = {
     getCategoriaFilmeController,
     atualizarCategoriaFilmeController,
     deletarCategoriaFilmeController,
+    getAllCategoriaFilmeController,
     novoDiretorController,
     getDiretorController,
     atualizarDiretorController,
@@ -68,6 +71,7 @@ module.exports = {
     getFilmeController,
     atualizarFilmeController,
     deletarFilmeController,
+    getPelaCategoriaController,
     novoPlanoController,
     getPlanoController,
     atualizarPlanoController,
@@ -79,4 +83,5 @@ module.exports = {
     filmeAssistidoPorController,
     viewsPorFilmeController,
     planosAtivosController,
+    catalogoUsuarioController
 }

@@ -5,6 +5,7 @@ const assistidosDoUsuarioService = require("./assistidosDoUsuario.service")
 const filmeAssistidoPorService = require("./filmeAssistidoPor.service")
 const viewsPorFilmeService = require("./viewsPorFilme.service")
 const planosAtivosService = require("./planosAtivos.service")
+const catalogoUsuarioService = require("./catalogoUsuario.service")
 
 module.exports = {
     assistidosService,
@@ -14,4 +15,5 @@ module.exports = {
     filmeAssistidoPorService,
     viewsPorFilmeService,
     planosAtivosService,
+    catalogoUsuarioService
 }
