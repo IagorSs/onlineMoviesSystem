@@ -38,6 +38,8 @@ const { assistidosController,
         quantidadeAssistidaDosUsuariosController,
         assistidosDoUsuarioController,
         filmeAssistidoPorController,
+        viewsPorFilmeController,
+        planosAtivosController,
         }
         = require("./querys")
 
@@ -75,4 +77,6 @@ module.exports = {
     quantidadeAssistidaDosUsuariosController,
     assistidosDoUsuarioController,
     filmeAssistidoPorController,
+    viewsPorFilmeController,
+    planosAtivosController,
 }
