@@ -1,7 +1,7 @@
 const { StatusCodes } = require("http-status-codes")
 
 const { messages } = require("../../helpers")
-const { filmeRepository } = require("../../repositories")
+const { filmeRepository, atorRepository, diretorRepository } = require("../../repositories")
 
 module.exports.get = async (id) => {
     const filme = await filmeRepository.get({id})
@@ -13,6 +13,9 @@ module.exports.get = async (id) => {
         }
     }
 
+    const ator = await atorRepository.get({id:filme.idAtorPrincipal})
+    const diretor = await diretorRepository.get({id:filme.idDiretor})
+
     return {
         id: filme.id,
         categoria: filme.categoria,
@@ -23,8 +26,8 @@ module.exports.get = async (id) => {
         imageUrl: filme.imageUrl,
         videoUrl: filme.videoUrl,
         descricao: filme.descricao,
-        idAtorPrincipal: filme.idAtorPrincipal,
-        idDiretor: filme.idDiretor,
+        idAtorPrincipal: ator,
+        idDiretor: diretor,
         createdAt: filme.createdAt,
         updatedAt: filme.updatedAt
     }
