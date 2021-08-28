@@ -162,6 +162,7 @@ begin
     then
         raise exception 'Você não possui o plano com este filme';
     end if;
+	return NEW;
 end;
 $filme_assistido_no_plano$ language plpgsql;
 
@@ -179,6 +180,7 @@ begin
     then
         raise exception 'Método de pagamento inválido';
     end if;
+	return NEW;
 end;
 $metodo_pagamento_valido$ language plpgsql;
 
@@ -196,6 +198,7 @@ begin
     then
         raise exception 'Email inválido';
     end if;
+	return NEW;
 end;
 $email_valido$ language plpgsql;
  
