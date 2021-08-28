@@ -213,6 +213,7 @@ begin
     then
         raise exception 'O filme ultrapassou o limite de duração';
     end if;
+	return NEW;
 end;
 $limite_duracao_filme$ language plpgsql;
 
