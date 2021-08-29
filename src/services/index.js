@@ -6,7 +6,8 @@ const { novoUsuarioService,
 const { novoAtorService, 
         getAtorService, 
         atualizarAtorService, 
-        deletarAtorService } 
+        deletarAtorService,
+        getAllAtorService } 
         = require("./ator")
 const { novoCategoriaFilmeService,
         getCategoriaFilmeService,
@@ -55,6 +56,7 @@ module.exports = {
     getAtorService,
     atualizarAtorService,
     deletarAtorService,
+    getAllAtorService,
     novoCategoriaFilmeService,
     getCategoriaFilmeService,
     atualizarCategoriaFilmeService,

@@ -6,7 +6,8 @@ const { novoUsuarioController,
 const { novoAtorController, 
         getAtorController, 
         atualizarAtorController, 
-        deletarAtorController } 
+        deletarAtorController,
+        getAllAtorController } 
         = require("./ator")
 const { novoCategoriaFilmeController,
         getCategoriaFilmeController,
@@ -55,6 +56,7 @@ module.exports = {
     getAtorController,
     atualizarAtorController,
     deletarAtorController,
+    getAllAtorController,
     novoCategoriaFilmeController,
     getCategoriaFilmeController,
     atualizarCategoriaFilmeController,
