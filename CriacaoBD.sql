@@ -99,27 +99,33 @@ ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( inscricao );
 
 ALTER TABLE filme_assistido
     ADD CONSTRAINT filme_assistido_filme_fk FOREIGN KEY ( id_filme )
-        REFERENCES filme ( id );
+        REFERENCES filme ( id )
+            ON DELETE CASCADE;
 
 ALTER TABLE filme_assistido
     ADD CONSTRAINT filme_assistido_usuario_fk FOREIGN KEY ( inscricao_usuario )
-        REFERENCES usuario ( inscricao );
+        REFERENCES usuario ( inscricao )
+            ON DELETE CASCADE;
 
 ALTER TABLE filme
     ADD CONSTRAINT filme_ator_fk FOREIGN KEY ( id_ator_principal )
-        REFERENCES ator ( id );
+        REFERENCES ator ( id )
+            ON DELETE CASCADE;
 
 ALTER TABLE filme
     ADD CONSTRAINT filme_categoria_filme_fk FOREIGN KEY ( categoria )
-        REFERENCES categoria_filme ( categoria );
+        REFERENCES categoria_filme ( categoria )
+            ON DELETE CASCADE;
 
 ALTER TABLE filme
     ADD CONSTRAINT filme_diretor_fk FOREIGN KEY ( id_diretor )
-        REFERENCES diretor ( id );
+        REFERENCES diretor ( id )
+            ON DELETE CASCADE;
 
 ALTER TABLE plano
     ADD CONSTRAINT plano_categoria_filme_fk FOREIGN KEY ( categoria )
-        REFERENCES categoria_filme ( categoria );
+        REFERENCES categoria_filme ( categoria )
+            ON DELETE CASCADE;
 
 ALTER TABLE plano
     ADD CONSTRAINT plano_usuario_fk FOREIGN KEY ( inscricao )
