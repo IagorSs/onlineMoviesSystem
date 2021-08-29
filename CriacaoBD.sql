@@ -374,7 +374,6 @@ insert into plano values (5,'terror',1,'crédito','27-12-2021');
 insert into filme_assistido values (1,1);
 insert into filme_assistido values (2,1);
 insert into filme_assistido values (3,1);
-insert into filme_assistido values (9,1);
 insert into filme_assistido values (5,2);
 insert into filme_assistido values (1,3);
 insert into filme_assistido values (4,3);

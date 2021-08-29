@@ -33,7 +33,8 @@ const { novoFilmeService,
 const { novoPlanoSerice,
         getPlanoService,
         atualizarPlanoService,
-        deletarPlanoService } 
+        deletarPlanoService,
+        getPlanosService } 
         = require("./plano")
 const { assistidosService,
         filmesViewsService,
@@ -76,6 +77,7 @@ module.exports = {
     getPlanoService,
     atualizarPlanoService,
     deletarPlanoService,
+    getPlanosService,
     assistidosService,
     filmesViewsService,
     quantidadeAssistidaDosUsuariosService,
