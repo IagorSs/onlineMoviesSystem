@@ -18,7 +18,8 @@ const { novoCategoriaFilmeController,
 const { novoDiretorController,
         getDiretorController,
         atualizarDiretorController,
-        deletarDiretorController } 
+        deletarDiretorController,
+        getAllDiretorController } 
         = require("./diretor")
 const { novoFilmeAssistidoController,
         getFilmeAssistidoController,
@@ -66,6 +67,7 @@ module.exports = {
     getDiretorController,
     atualizarDiretorController,
     deletarDiretorController,
+    getAllDiretorController,
     novoFilmeAssistidoController,
     getFilmeAssistidoController,
     atualizarFilmeAssistidoController,

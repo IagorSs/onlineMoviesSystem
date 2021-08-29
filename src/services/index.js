@@ -18,7 +18,8 @@ const { novoCategoriaFilmeService,
 const { novoDiretorService,
         getDiretorService,
         atualizarDiretorService,
-        deletarDiretorService} 
+        deletarDiretorService,
+        getAllDiretorService } 
         = require("./diretor")
 const { novoFilmeAssistidoService,
         getFilmeAssistidoService,
@@ -66,6 +67,7 @@ module.exports = {
     getDiretorService,
     atualizarDiretorService,
     deletarDiretorService,
+    getAllDiretorService,
     novoFilmeAssistidoService,
     getFilmeAssistidoService,
     atualizarFilmeAssistidoService,
