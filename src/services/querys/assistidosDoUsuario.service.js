@@ -3,19 +3,9 @@ const { StatusCodes } = require("http-status-codes")
 const { messages } = require("../../helpers")
 const { querysRepository, filmeRepository, atorRepository, diretorRepository } = require("../../repositories")
 
-module.exports.assistidosDoUsuario = async (inscricao) => {
-    const consulta = await querysRepository.assistidosDoUsuario(inscricao)
-
-    if(!consulta) {
-        throw{
-            status: StatusCodes.INTERNAL_SERVER_ERROR,
-            message: messages.internalError()
-        }
-    }
-
-    let response = []
-    consulta.forEach(async (element) => {
-        let filme = await filmeRepository.list({raw: true, where: {id: element.id_filme}})
+const find = async (consulta, response) => {
+    for (x in consulta){
+        let filme = await filmeRepository.list({raw: true, where: {id: consulta[x].id_filme}})
         filme = filme.rows
         
         filme[0].idAtorPrincipal = await atorRepository.list({raw: true, where: {id: filme[0].idAtorPrincipal}})
@@ -40,8 +30,24 @@ module.exports.assistidosDoUsuario = async (inscricao) => {
             createdAt: filme[0].createdAt,
             updatedAt: filme[0].updatedAt
         })
-    });
+        console.log(response)
+    }
 
-    console.log(response)
+    return response
+}
+
+module.exports.assistidosDoUsuario = async (inscricao) => {
+    const consulta = await querysRepository.assistidosDoUsuario(inscricao)
+
+    if(!consulta) {
+        throw{
+            status: StatusCodes.INTERNAL_SERVER_ERROR,
+            message: messages.internalError()
+        }
+    }
+
+    let response = await find(consulta, [])
+
+    console.log("final:",response)
     return response
 }
