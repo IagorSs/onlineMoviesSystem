@@ -238,16 +238,16 @@ execute procedure func_limite_duracao_filme();
 
 
 insert into ator values (93304363076,'Cleiton','12-01-2001');
-insert into ator values (20241904056,'Ana','24-11-1985');
-insert into ator values (42579143009,'Jubileido','05-08-1966');
-insert into ator values (97466300081,'Silva','20-02-1995');
-insert into ator values (47249303066,'Jonas','15-12-2003');
+insert into ator values (20241904056,'Ana',TO_DATE('24-11-1985','DD-MM-YYYY'));
+insert into ator values (42579143009,'Jubileido',TO_DATE('05-08-1966','DD-MM-YYYY'));
+insert into ator values (97466300081,'Silva',TO_DATE('20-02-1995','DD-MM-YYYY'));
+insert into ator values (47249303066,'Jonas',TO_DATE('15-12-2003','DD-MM-YYYY'));
 
-insert into diretor values (70899807070,'Tarantino','29-03-1975',0);
-insert into diretor values (13323341058,'Spielberg','29-03-1975',0);
-insert into diretor values (15152761041,'Scorsese','29-03-1975',0);
-insert into diretor values (30968490050,'Hitchcock','29-03-1975',0);
-insert into diretor values (66514355072,'Tim Burton','25-08-1987',0);
+insert into diretor values (70899807070,'Tarantino',TO_DATE('29-03-1975','DD-MM-YYYY'),0);
+insert into diretor values (13323341058,'Spielberg',TO_DATE('29-03-1975','DD-MM-YYYY'),0);
+insert into diretor values (15152761041,'Scorsese',TO_DATE('29-03-1975','DD-MM-YYYY'),0);
+insert into diretor values (30968490050,'Hitchcock',TO_DATE('29-03-1975','DD-MM-YYYY'),0);
+insert into diretor values (66514355072,'Tim Burton',TO_DATE('25-08-1987','DD-MM-YYYY'),0);
 
 insert into categoria_filme values ('ação');
 insert into categoria_filme values ('aventura');
@@ -361,15 +361,15 @@ insert into usuario values (3,'renato@outlook.com.br','Renato Aragão','didimoco
 insert into usuario values (4,'maria@outlook.com','Maria da Graça','xuxameneguel','soparabaixinhos');
 insert into usuario values (5,'terroreuamo@outlook.com','Cleiton Rasta','naotenhomedo','terrors2');
 
-insert into plano values (1,'ação',3,'crédito','27-12-2022');
-insert into plano values (1,'aventura',3,'crédito','27-12-2022');
-insert into plano values (2,'romance',1,'débito automatico','27-12-2021');
-insert into plano values (3,'ação',5,'crédito','27-12-2023');
-insert into plano values (3,'aventura',5,'crédito','27-12-2023');
-insert into plano values (3,'romance',5,'crédito','27-12-2023');
-insert into plano values (3,'infantil',5,'crédito','27-12-2023');
-insert into plano values (4,'infantil',1,'boleto','27-12-2021');
-insert into plano values (5,'terror',1,'crédito','27-12-2021');
+insert into plano values (1,'ação',3,'crédito',TO_DATE('27-12-2022','DD-MM-YYYY'));
+insert into plano values (1,'aventura',3,'crédito',TO_DATE('27-12-2022','DD-MM-YYYY'));
+insert into plano values (2,'romance',1,'débito automatico',TO_DATE('27-12-2021','DD-MM-YYYY'));
+insert into plano values (3,'ação',5,'crédito',TO_DATE('27-12-2023','DD-MM-YYYY'));
+insert into plano values (3,'aventura',5,'crédito',TO_DATE('27-12-2023','DD-MM-YYYY'));
+insert into plano values (3,'romance',5,'crédito',TO_DATE('27-12-2023','DD-MM-YYYY'));
+insert into plano values (3,'infantil',5,'crédito',TO_DATE('27-12-2023','DD-MM-YYYY'));
+insert into plano values (4,'infantil',1,'boleto',TO_DATE('27-12-2021','DD-MM-YYYY'));
+insert into plano values (5,'terror',1,'crédito',TO_DATE('27-12-2021','DD-MM-YYYY'));
 
 insert into filme_assistido values (1,1);
 insert into filme_assistido values (2,1);
