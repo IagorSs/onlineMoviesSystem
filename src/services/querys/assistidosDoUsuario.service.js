@@ -31,7 +31,6 @@ const find = async (consulta, response) => {
             createdAt: filme[0].createdAt,
             updatedAt: filme[0].updatedAt
         })
-        console.log(response)
     }
 
     return response
@@ -49,6 +48,5 @@ module.exports.assistidosDoUsuario = async (inscricao) => {
 
     let response = await find(consulta, [])
 
-    console.log("final:",response)
     return response
 }
