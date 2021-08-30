@@ -9,10 +9,10 @@ const find = async (consulta, response) => {
         filme = filme.rows
         
         filme[0].idAtorPrincipal = await atorRepository.list({raw: true, where: {id: filme[0].idAtorPrincipal}})
-        filme[0].idAtorPrincipal = filme[0].idAtorPrincipal.rows
+        filme[0].idAtorPrincipal = filme[0].idAtorPrincipal.rows[0]
 
         filme[0].idDiretor = await diretorRepository.list({raw: true, where: {id: filme[0].idDiretor}})
-        filme[0].idDiretor = filme[0].idDiretor.rows
+        filme[0].idDiretor = filme[0].idDiretor.rows[0]
 
         
         response.push({
