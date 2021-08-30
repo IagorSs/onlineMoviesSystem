@@ -18,7 +18,8 @@ const find = async (consulta, response) => {
         response.push({
             id: filme[0].id,
             categoria: filme[0].categoria,
-            duracao: filme[0].descricao,
+            duracao: filme[0].duracao,
+            descricao: filme[0].descricao,
             nome: filme[0].nome,
             produtora: filme[0].produtora,
             arquivo: filme[0].arquivo,
@@ -30,7 +31,6 @@ const find = async (consulta, response) => {
             createdAt: filme[0].createdAt,
             updatedAt: filme[0].updatedAt
         })
-        console.log(response)
     }
 
     return response
@@ -48,6 +48,5 @@ module.exports.assistidosDoUsuario = async (inscricao) => {
 
     let response = await find(consulta, [])
 
-    console.log("final:",response)
     return response
 }
