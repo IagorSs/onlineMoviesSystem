@@ -3,7 +3,8 @@ const { StatusCodes } = require("http-status-codes")
 const { messages } = require("../../helpers")
 const { diretorRepository } = require("../../repositories")
 
-module.exports.novo = async (id, nome, nascimento, n_filmes_dirigidos) => {
+module.exports.novo = async ( nome, nascimento) => {
+    const id = parseInt(Math.random() * 100000000000)
     const diretor = await diretorRepository.get({id})
 
     if(diretor){
@@ -14,10 +15,10 @@ module.exports.novo = async (id, nome, nascimento, n_filmes_dirigidos) => {
     }
 
     const novo = {
-        id,
+        id: id,
         nome,
         nascimento,
-        n_filmes_dirigidos,
+        n_filmes_dirigidos: 0,
         createdAt: new Date(),
         updatedAt: new Date()
     }
@@ -28,6 +29,6 @@ module.exports.novo = async (id, nome, nascimento, n_filmes_dirigidos) => {
         id,
         nome,
         nascimento,
-        n_filmes_dirigidos
+        n_filmes_dirigidos: 0
     }
 }

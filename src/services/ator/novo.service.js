@@ -6,7 +6,8 @@ const { constants } = require("../../utils")
 const { atorRepository } = require("../../repositories")
 const { promisify } = require("util")
 
-module.exports.novo = async(id, nome, nascimento) => {
+module.exports.novo = async( nome, nascimento) => {
+    const id = parseInt(Math.random() * 100000000000)
     const ator = await atorRepository.get({id})
 
     if(ator){
@@ -17,7 +18,7 @@ module.exports.novo = async(id, nome, nascimento) => {
     }
 
     const novo = {
-        id,
+        id: id,
         nome,
         nascimento,
         createdAt: new Date(),

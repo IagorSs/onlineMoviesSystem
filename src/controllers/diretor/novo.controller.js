@@ -6,18 +6,16 @@ module.exports = {
     novo: async (req, res) => {
         try {
             const schema = yup.object().shape({
-                id: yup.number().required(), 
                 nome: yup.string().required(),
                 nascimento: yup.date(),
-                n_filmes_dirigidos: yup.number()
             })
 
             await schema.validate(req.body, {
                 stripUnknown: true
             })
 
-            const { id, nome, nascimento, n_filmes_dirigidos } = req.body
-            const response = await novoDiretorService.novo(id, nome, nascimento, n_filmes_dirigidos)
+            const { nome, nascimento } = req.body
+            const response = await novoDiretorService.novo( nome, nascimento)
             return res.status(StatusCodes.OK).json(response)
         } catch (error) {
             console.error(error)

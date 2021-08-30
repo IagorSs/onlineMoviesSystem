@@ -16,8 +16,19 @@ module.exports.atualizar = async(inscricao, categoria, n_telas, pagamento, expir
     plano.nTelas = n_telas
     plano.pagamento = pagamento
     plano.expiracao = expiracao
+    plano.updatedAt = new Date()
 
-    await planoRepository.update(plano)
+    await planoRepository.destroy({inscricao, categoria})
+
+    await planoRepository.create({
+        inscricao: plano.inscricao,
+        categoria: plano.categoria,
+        nTelas: plano.nTelas,
+        pagamento: plano.pagamento,
+        expiracao: plano.expiracao,
+        createdAt: plano.createdAt,
+        updatedAt: plano.updatedAt
+    })
 
     return { 
         inscricao: plano.inscricao, 
