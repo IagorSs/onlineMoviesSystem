@@ -18,7 +18,8 @@ const find = async (consulta, response) => {
         response.push({
             id: filme[0].id,
             categoria: filme[0].categoria,
-            duracao: filme[0].descricao,
+            duracao: filme[0].duracao,
+            descricao: filme[0].descricao,
             nome: filme[0].nome,
             produtora: filme[0].produtora,
             arquivo: filme[0].arquivo,
